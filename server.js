@@ -291,6 +291,10 @@ app.delete("/api/files/:id", auth, (req, res) => {
   res.json({ ok: true });
 });
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(ROOT, "public", "index.html"));
+});
+
 app.get("*splat", (req, res) => {
   res.sendFile(path.join(ROOT, "public", "index.html"));
 });
